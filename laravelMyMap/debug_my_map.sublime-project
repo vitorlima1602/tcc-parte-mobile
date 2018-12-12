@@ -1,0 +1,14 @@
+{  
+    "folders":  
+    [  
+        {  
+            "follow_symlinks": true,  
+            "path": "."  
+        }  
+    ],
+    "settings": {
+        "xdebug": { 
+             "url": "http://www.localhost:8000/app/Http/Controllers/ApiMyMapController.php"  
+       }  
+   } 
+}

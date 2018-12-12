@@ -1,0 +1,1 @@
+O projeto laravelMyMap é responsável pos prestar os serviços relacionados a conexão com o banco de dados.

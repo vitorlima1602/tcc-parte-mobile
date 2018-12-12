@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Login</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class = "login" style="text-align: center">
+        <div id="imagem" style="text-align: center">
+                <img src="../../assets/images/mapa.png" style="width: 30%;height: 30%; margin-top: 10%">
+                <h2 style="color: black">Maps</h2>
+          </div>
+   <div id="componentes" style="margin-top: 20%">
+       <ion-list text-wrap>
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="usuario" placeholder = "Usuario"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+            <ion-input type="password" [(ngModel)]="senha" placeholder = senha></ion-input>   
+        </ion-item>
+        <br>
+        <button style="width: 40%" ion-button color = "primary"round (click)="Login()">Logar</button>
+        </ion-list>
+</div>
+</ion-content>

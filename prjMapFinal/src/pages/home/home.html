@@ -1,0 +1,107 @@
+<ion-content padding class="home">
+
+    <div>
+        <div style="float: left;width: 40%">
+
+            <h3 style="color:black">Bem vindo,
+                <h3>{{nomeCidadao}}!</h3>
+            </h3>
+
+        </div>
+
+        <div style="float: right; margin-top: -1%;width: 30%">
+
+            <button ion-button outline round (click)="deslogar()">Logout</button>
+
+        </div>
+
+    </div>
+
+    <div id="mapa" style="width: 100%; height: 75%; margin-top: 5%"></div>
+
+    <div style="text-align: center; margin-top: 5%">
+
+        <button style="width: 60%" ion-button round (click)="MostrarProblema()">{{labelProblemas}}</button>
+
+        <button style="width: 60%" ion-button round (click)="Registrar()">{{labelFormulario}}</button>
+
+    </div>
+    <br>
+
+    <div id="registro" class="padding" *ngIf="registro">
+
+        <ion-item>
+
+            <ion-label color="dark">
+                <h3>*Clique no mapa acima e defina o lugar desejado</h3>
+            </ion-label>
+
+        </ion-item>
+
+        <ion-item>
+
+            <ion-label>
+                <h1>Registro</h1>
+            </ion-label>
+
+        </ion-item>
+
+        <form [formGroup]="registrar">
+
+            <ion-list text-wrap>
+
+                <ion-item>
+
+                    <ion-label>Area</ion-label>
+
+                    <ion-select formControlName="areaSelecionada" (ionChange)="loadList($event)">
+                        <ion-option *ngFor="let area of arrayAreasDoBD" value={{area.id}}> {{area.nome}} </ion-option>
+                    </ion-select>
+
+                </ion-item>
+
+                <ion-item>
+
+                    <ion-label>Subarea</ion-label>
+
+                    <ion-select [(ngModel)]="subAreaSelecionada" formControlName="subAreaSelecionada" name="subareas">
+                        <ion-option *ngFor="let subarea of arraySubAreasJSON" value={{subarea.id}}> {{subarea.nome}} </ion-option>
+                    </ion-select>
+
+                </ion-item>
+
+                <ion-item>
+
+                    <ion-label stacked>
+                        <h2>Data</h2>
+                    </ion-label>
+
+                    <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="dataReg" formControlName="dataReg"></ion-datetime>
+
+                </ion-item>
+
+                <ion-item>
+
+                    <ion-label stacked>
+                        <h2>Descricao</h2>
+                    </ion-label>
+
+                    <ion-textarea [(ngModel)]="descricao" placeholder="Entre com a descrição..." formControlName="descricao"></ion-textarea>
+
+                </ion-item>
+
+                <div id="btnForm" style="text-align: center; margin-top: 3%">
+
+                    <button [disabled]="registrar.invalid" ion-button color="secondary" round (click)="EnviarInformacoes()">Enviar</button>
+
+                    <button ion-button color="danger" round (click)="Limpar()">Limpar</button>
+
+                </div>
+
+            </ion-list>
+
+        </form>
+
+    </div>
+
+</ion-content>

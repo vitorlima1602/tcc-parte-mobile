@@ -1,0 +1,125 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Cadastro
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="cadastro">
+
+    <ion-item>
+
+        <ion-label>
+            <h1>Dados Pessoais</h1>
+        </ion-label>
+
+    </ion-item>
+
+    <form [formGroup]="cadastrar">
+
+        <ion-list text-wrap>
+
+            <ion-item>
+
+                <ion-label stacked>
+                    <h2>Nome de Usuario</h2>
+                </ion-label>
+
+                <ion-input type="text" required="" [(ngModel)]="nomeUsuario" formControlName="nomeUsuario" maxlength="20"></ion-input>
+
+            </ion-item>
+
+            <ion-item>
+
+                <ion-label stacked>
+                    <h2>Primeiro Nome</h2>
+                </ion-label>
+
+                <ion-input type="text" [(ngModel)]="primNome" formControlName="primNome" maxlength="15"></ion-input>
+
+            </ion-item>
+
+            <ion-item>
+
+                <ion-label stacked>
+                    <h2>Ultimo Nome</h2>
+                </ion-label>
+
+                <ion-input type="text" [(ngModel)]="ultNome" formControlName="ultNome" maxlength="50"></ion-input>
+
+            </ion-item>
+
+            <ion-item>
+
+                <ion-label stacked>
+                    <h2>Senha</h2>
+                </ion-label>
+
+                <ion-input type="password" [(ngModel)]="senha" formControlName="senha" maxlength="12"></ion-input>
+
+            </ion-item>
+
+            <ion-item>
+
+                <ion-label stacked>
+                    <h2>Email</h2>
+                </ion-label>
+
+                <ion-input type="email" [(ngModel)]="email" formControlName="email" maxlength="30" placeholder="Ex.: exemplo@exemplo.com"></ion-input>
+
+            </ion-item>
+
+            <ion-item>
+
+                <ion-label stacked>
+                    <h2>Logradouro</h2>
+                </ion-label>
+
+                <ion-input type="text" [(ngModel)]="logradouro" formControlName="logradouro" maxlength="50"></ion-input>
+
+            </ion-item>
+
+            <ion-item>
+
+                <ion-label stacked>
+                    <h2>Numero</h2>
+                </ion-label>
+
+                <ion-input type="text" [(ngModel)]="numero" formControlName="numero" maxlength="8"></ion-input>
+
+            </ion-item>
+
+            <ion-item>
+
+                <ion-label stacked>
+                    <h2>Bairro</h2>
+                </ion-label>
+
+                <ion-input type="text" [(ngModel)]="bairro" formControlName="bairro" maxlength="50"></ion-input>
+
+            </ion-item>
+
+            <ion-item>
+
+                <ion-label stacked>
+                    <h2>Cidade</h2>
+                </ion-label>
+
+                <ion-input type="text" [(ngModel)]="cidade" formControlName="cidade" maxlength="50"></ion-input>
+
+            </ion-item>
+
+        </ion-list>
+
+        <div style="text-align: center">
+
+            <button [disabled]="cadastrar.invalid" ion-button color="secondary" (click)="CadastroCidadao()"> Enviar </button>
+
+            <button ion-button color="danger" (click)="Limpar()">Limpar</button>
+
+        </div>
+
+    </form>
+
+</ion-content>
